@@ -1,0 +1,12 @@
+<div class="container">
+  <form (submit)="submit()" [formGroup]="myForm">
+    <label for="fname">Tên:</label><br />
+    <input type="text" id="fname" formControlName="name" /><br />
+    <label for="lname">Giá:</label><br />
+    <input type="number" id="lname" formControlName="price" /><br />
+    <label for="lname">Số Lượng:</label><br />
+    <input type="number" id="lname" formControlName="quantity" /><br />
+    <br />
+    <button mat-raised-button color="warn">nhập hàng</button>
+  </form>
+</div>

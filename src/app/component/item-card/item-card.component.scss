@@ -1,0 +1,33 @@
+.container {
+    height: 450px;
+    max-width: 280px;
+    font-size: 14px;
+    margin: 20px 0px 10px;
+    box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.2), 0 -2px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img {
+    width: 100%;
+    border-radius: 10px;
+    height: 280px;
+    object-fit: cover;
+
+}
+
+h4 {
+    font-family: 'SF Pro Display', sans-serif;
+    margin-left: 1%;
+}
+
+p {
+    font-family: 'SF Pro Display', sans-serif;
+    margin-left: 1%;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    /* Horizontally center the button */
+    margin-bottom: 10px;
+    /* Add some margin at the bottom to separate the button from the container */
+}

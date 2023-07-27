@@ -1,0 +1,13 @@
+<div class="container">
+  <img src="{{ item.image }}" class="img" />
+  <div style="margin-top: 5px">
+    <h4 style="margin-bottom: 4px">{{ item.name }}</h4>
+    <p style="margin-top: 5px">{{ item.price }}.000 đ</p>
+    <p style="margin-top: 5px">số lượng:{{ item.quantity }}</p>
+  </div>
+  <div class="btn">
+    <button mat-raised-button color="accent" (click)="addCart()">
+      thêm vào giỏ hàng
+    </button>
+  </div>
+</div>

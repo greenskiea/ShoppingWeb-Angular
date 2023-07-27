@@ -1,0 +1,15 @@
+.container {
+    margin-top: 2%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+textarea {
+    width: 190px;
+    height: 15px;
+}

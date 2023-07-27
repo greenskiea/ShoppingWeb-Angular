@@ -1,0 +1,115 @@
+.DiaChi_SDT {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+}
+
+.canhGiua {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.DiaChi {
+    display: flex;
+    align-items: center;
+}
+
+.SDT {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.LogoDiaChi {
+    height: 22px;
+    margin-right: 3px;
+}
+
+.NoiDungDC {
+    font-size: 12px;
+    color: #00000099;
+    font-family: 'SF Pro Text', sans-serif;
+    margin: 0;
+}
+
+.LogoSDT {
+    margin-right: 5px;
+}
+
+.noidungSDT {
+    font-size: 12px;
+    color: #00000099;
+    font-family: 'SF Pro Text', sans-serif;
+    margin: 0;
+}
+
+.icon {
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: black;
+    color: orange;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.icon {
+    height: 25px;
+    width: 25px;
+}
+
+.noidungGioHang {
+    font-size: 12px;
+    color: #00000099;
+    font-family: 'SF Pro Text', sans-serif;
+    margin: 0;
+}
+
+.navbar-container {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F6F1F1;
+}
+
+.canh-le-navbar {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo {
+    height: 15px;
+    margin-left: 8%;
+}
+
+.option-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-button {
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 19px 18px;
+    cursor: pointer;
+}
+
+.option-button:hover {
+    color: orange;
+}

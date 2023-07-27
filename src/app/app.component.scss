@@ -1,0 +1,11 @@
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    margin-left: 2%;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
