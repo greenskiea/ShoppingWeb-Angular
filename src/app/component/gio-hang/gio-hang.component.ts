@@ -20,5 +20,8 @@ export class GioHangComponent {
       tempTotal += this.ItemCart[i].price * this.ItemCart[i].quantity;
     }
     alert(`Tổng tiền là: ${tempTotal}.000 đ`);
+
+    this.ItemCart = [];
+    this.onCloseCart.emit();
   }
 }

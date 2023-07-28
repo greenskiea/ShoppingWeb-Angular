@@ -78,6 +78,13 @@ export class AppComponent {
   }
 
   addCart(item: any) {
+    if (item.quantity == 0) {
+      alert('Hết hàng');
+      return;
+    } else {
+      item.quantity -= 1;
+    }
+
     let index = this.cart.findIndex((x) => x.id == item.id);
     if (index != -1) {
       this.cart[index].quantity += 1;
