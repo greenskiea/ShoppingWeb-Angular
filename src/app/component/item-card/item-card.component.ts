@@ -19,4 +19,8 @@ export class ItemCardComponent implements OnInit {
   addCart() {
     this.onCart.emit();
   }
+
+  removeCart() {
+    this.onCart.emit();
+  }
 }
