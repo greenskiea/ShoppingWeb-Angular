@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "StoreWeb",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

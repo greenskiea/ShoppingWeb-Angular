@@ -1,5 +1,5 @@
 import { outputAst } from '@angular/compiler';
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Item } from 'src/app/model/item.model';
 
@@ -11,6 +11,7 @@ import { Item } from 'src/app/model/item.model';
 export class FormComponent implements OnInit {
   @Input()
   listItems: Item[] = [];
+  @Output() onAddItem = new EventEmitter<Item>();
 
   myForm: FormGroup = new FormGroup({});
   name: FormControl = new FormControl('');
@@ -27,14 +28,13 @@ export class FormComponent implements OnInit {
 
   submit() {
     let newItem: Item = {
-      id: this.listItems.length + 1,
+      id: new Date().getTime().toString(),
       name: this.name.value!,
       price: this.price.value!,
       quantity: this.quantity.value!,
       image: this.image.value ?? '',
     };
-    this.listItems.push(newItem);
-    console.log(this.listItems);
+    this.onAddItem.emit(newItem);
   }
 
   ngOnInit(): void {
