@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Item } from 'src/app/model/item.model';
 import { StoreService } from 'src/app/services/store.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -16,10 +17,14 @@ export class HomeComponent {
   cart: Item[] = [];
   listItems: Item[] = [];
 
-  constructor(private StoreService: StoreService) {}
+  constructor(
+    public storeService: StoreService,
+    public authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.getItem();
+    this.cart = this.storeService.cart;
   }
 
   showDialog() {
@@ -32,21 +37,48 @@ export class HomeComponent {
   }
 
   getItem() {
-    this.StoreService.getItem().then((items) => {
+    this.storeService.getItems().then((items) => {
       this.listItems = items;
       console.log(this.listItems);
     });
   }
 
-  addCart(item: any) {
-    this.StoreService.addCart(item);
-    console.log(this.StoreService.cart);
-  }
-
-  handelAddItem(item: Item) {
-    this.StoreService.addItem(item).then((StatusMessage) => {
+  async deleteItem(item: Item) {
+    this.storeService.deleteItem(item.id).then((StatusMessage) => {
       console.log(StatusMessage);
       this.getItem();
     });
+  }
+
+  async updateItem(item: Item) {
+    this.storeService
+      .updateItem(item.id, item.name, item.price, item.quantity, item.image)
+      .then((StatusMessage) => {
+        console.log(StatusMessage);
+        this.getItem();
+      });
+  }
+
+  onAddCart(item: any) {
+    this.storeService.addCart(item);
+  }
+
+  onIncrease(item: any) {
+    this.storeService.increaseItem(item);
+  }
+
+  onDecrease(item: any) {
+    this.storeService.descreaseItem(item);
+  }
+
+  handelAddItem(item: Item) {
+    this.storeService.addItem(item).then((StatusMessage) => {
+      console.log(StatusMessage);
+      this.getItem();
+    });
+  }
+
+  onPay() {
+    this.storeService.pay();
   }
 }

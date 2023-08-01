@@ -16,7 +16,7 @@
       />
       <p class="noidungSDT">Đặt hàng: 1800.6936</p>
     </div>
-    <div class="icon-container" (click)="openCart()">
+    <div class="Cart" (click)="openCart()">
       <img
         src="https://cdn.pixabay.com/photo/2014/04/02/10/53/shopping-cart-304843_960_720.png"
         alt=""
@@ -41,7 +41,25 @@
       <button class="option-button">Cảm Hứng CloudFee</button>
       <button class="option-button">Cửa Hàng</button>
       <button class="option-button">Tuyển Dụng</button>
-      <button class="option-button">Thêm Sản Phẩm</button>
+      <a routerLink="/addItem"
+        ><button class="option-button" *ngIf="this.authService.user != null">
+          Thêm Sản Phẩm
+        </button></a
+      >
+      <button
+        class="option-button"
+        *ngIf="this.authService.user == null"
+        (click)="authService.login()"
+      >
+        Đăng Nhập
+      </button>
+      <button
+        class="option-button"
+        *ngIf="this.authService.user != null"
+        (click)="authService.logout()"
+      >
+        Đăng Xuất
+      </button>
     </div>
   </div>
 </div>

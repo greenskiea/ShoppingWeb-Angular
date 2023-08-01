@@ -16,8 +16,14 @@
         <tr *ngFor="let item of ItemCart">
           <td>{{ item.name }}</td>
           <td>{{ item.price }}.000 đ</td>
-          <td>{{ item.quantity }}</td>
-          <td>{{ item.price * item.quantity }}.000 đ</td>
+          <td>
+            <div>
+              <button class="decrease" (click)="decreaseItem(item)">-</button>
+              {{ item.inCart! }}
+              <button class="increase" (click)="increaseItem(item)">+</button>
+            </div>
+          </td>
+          <td>{{ item.price * item.inCart! }}.000 đ</td>
         </tr>
       </tbody>
     </div>

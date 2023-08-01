@@ -6,12 +6,20 @@
 <app-navpar (onCart)="showDialog()"></app-navpar>
 <div class="card">
   <app-item-card
-    (onCart)="addCart($event)"
-    *ngFor="let item of listItems"
+    (onCart)="onAddCart($event)"
+    (onDeleteItem)="deleteItem($event)"
+    *ngFor="let item of storeService.listItems"
     [item]="item"
+    (onUpdateItem)="updateItem($event)"
   ></app-item-card>
 </div>
 
 <dialog #cartElement>
-  <app-gio-hang (onCloseCart)="closeDialog()" [ItemCart]="cart"></app-gio-hang>
+  <app-gio-hang
+    (onCloseCart)="closeDialog()"
+    [ItemCart]="cart"
+    (onIncreaseItem)="onIncrease($event)"
+    (onDecreaseItem)="onDecrease($event)"
+    (onPay)="onPay()"
+  ></app-gio-hang>
 </dialog>

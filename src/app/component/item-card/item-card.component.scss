@@ -33,9 +33,7 @@ p {
     display: flex;
     justify-content: center;
     /* Horizontally center the button */
-    margin-bottom: 10px;
-    /* Add some margin at the bottom to separate the button from the container */
-    padding-bottom: 10px;
+    padding: 10px;
 
     transition: all 0.5s ease-in-out;
 
@@ -47,7 +45,41 @@ p {
     }
 
     &>button {
-        width: 70%;
         border-radius: 30px;
     }
+}
+
+
+textarea {
+    width: 190px;
+    height: 15px;
+}
+
+label {
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    padding-left: 1rem;
+
+}
+
+input {
+    border-radius: 5px;
+}
+
+#fname,
+#lname {
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    line-height: 100%;
+    border-radius: 30px;
+    padding-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
 }

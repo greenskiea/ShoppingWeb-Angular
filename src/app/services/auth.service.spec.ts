@@ -1,13 +1,14 @@
 import { TestBed } from '@angular/core/testing';
+import { Auth } from '@angular/fire/auth';
 
-import { ShareItemService } from './share-item.service';
+import { AuthService } from './auth.service';
 
-describe('ShareItemService', () => {
-  let service: ShareItemService;
+describe('AuthService', () => {
+  let service: AuthService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ShareItemService);
+    service = TestBed.inject(AuthService);
   });
 
   it('should be created', () => {

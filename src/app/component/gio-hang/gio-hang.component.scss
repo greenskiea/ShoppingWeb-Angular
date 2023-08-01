@@ -16,3 +16,23 @@
     padding: 8px 16px;
     border-bottom: 1px solid #ccc;
 }
+
+.increase {
+    height: 23px;
+    width: 23px;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgb(13, 206, 13);
+    font-size: 20px;
+    color: white;
+}
+
+.decrease {
+    height: 23px;
+    width: 23px;
+    border: 0;
+    border-radius: 50%;
+    background-color: red;
+    font-size: 20px;
+    color: white;
+}

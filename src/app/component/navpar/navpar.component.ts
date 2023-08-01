@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navpar',
@@ -7,6 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavparComponent {
   @Output() onCart = new EventEmitter();
+
+  constructor(public authService: AuthService) {}
 
   openCart() {
     this.onCart.emit();

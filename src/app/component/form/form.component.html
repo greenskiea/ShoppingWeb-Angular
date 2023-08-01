@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="this.authService.user != null">
   <form (submit)="submit()" [formGroup]="myForm">
     <label for="fname">Tên:</label><br />
     <input type="text" id="fname" formControlName="name" /><br />
@@ -9,6 +9,10 @@
     <label for="lname">Hình ảnh:</label><br />
     <input type="text" id="lname" formControlName="image" /><br />
     <br />
-    <button mat-raised-button color="warn">nhập hàng</button>
+    <button mat-raised-button color="warn">nhập hàng</button><br />
+    <br />
+    <a routerLink="/"
+      ><button mat-raised-button color="primary">quay về</button></a
+    >
   </form>
 </div>

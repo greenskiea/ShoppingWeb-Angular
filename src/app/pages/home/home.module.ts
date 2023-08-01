@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { BootstrapModule } from 'src/app/shared/bootstrap/bootstrap.module';
+import { CoreModule } from 'src/app/shared/core/core.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BootstrapModule } from 'src/app/shared/bootstrap/bootstrap.module';
     MatButtonModule,
     MatDialogModule,
     BootstrapModule,
+    CoreModule,
   ],
 })
 export class HomeModule {}

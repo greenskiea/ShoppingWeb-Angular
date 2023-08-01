@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="this.flip == false">
   <img src="{{ item.image }}" class="img" />
   <div style="margin-top: 5px">
     <h4 style="margin-bottom: 4px">{{ item.name }}</h4>
@@ -10,4 +10,43 @@
       Thêm vào giỏ hàng
     </button>
   </div>
+  <div class="button">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="flipCard()"
+      *ngIf="this.authService.user != null"
+    >
+      đổi thông tin
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="deleteItem()"
+      *ngIf="this.authService.user != null"
+    >
+      xóa sản phẩm
+    </button>
+  </div>
+</div>
+<div class="container" *ngIf="this.flip == true">
+  <form (submit)="updateItem()" [formGroup]="myForm">
+    <label for="fname">Tên:</label><br />
+    <input type="text" id="fname" formControlName="name" /><br />
+    <label for="lname">Giá:</label><br />
+    <input type="number" id="lname" formControlName="price" /><br />
+    <label for="lname">Số Lượng:</label><br />
+    <input type="number" id="lname" formControlName="quantity" /><br />
+    <label for="lname">Hình ảnh:</label><br />
+    <input type="text" id="lname" formControlName="image" /><br />
+    <br />
+    <div class="button">
+      <button mat-raised-button color="accent">Đổi thông tin</button>
+    </div>
+    <div class="button">
+      <button mat-raised-button color="primary" (click)="flipBackCard()">
+        Quay lại
+      </button>
+    </div>
+  </form>
 </div>

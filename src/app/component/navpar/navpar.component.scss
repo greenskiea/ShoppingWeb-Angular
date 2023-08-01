@@ -57,10 +57,11 @@
     color: orange;
 }
 
-.icon-container {
+.Cart {
     display: flex;
     align-items: center;
     margin-left: 10%;
+    cursor: pointer;
 }
 
 .icon {
@@ -104,12 +105,15 @@
 .option-button {
     background-color: white;
     border: none;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     padding: 19px 18px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
 }
 
 .option-button:hover {
     color: orange;
+    transition: all 0.2s ease-in-out;
 }

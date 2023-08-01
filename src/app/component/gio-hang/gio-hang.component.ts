@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from 'src/app/model/item.model';
-import { ShareItemService } from 'src/app/services/share-item.service';
 import { StoreService } from 'src/app/services/store.service';
 
 @Component({
@@ -12,16 +11,28 @@ export class GioHangComponent {
   @Input() ItemCart: Item[] = [];
   @Output() onCloseCart = new EventEmitter();
 
+  @Output() onIncreaseItem = new EventEmitter<Item>();
+  @Output() onDecreaseItem = new EventEmitter<Item>();
+  @Output() onPay = new EventEmitter();
+
   constructor(private StoreService: StoreService) {}
 
   closeCart() {
     this.onCloseCart.emit();
   }
 
+  increaseItem(item: Item) {
+    this.onIncreaseItem.emit(item);
+  }
+
+  decreaseItem(item: Item) {
+    this.onDecreaseItem.emit(item);
+  }
+
   total() {
     let tempTotal = this.StoreService.total();
     alert(`Tổng tiền là: ${tempTotal}.000 đ`);
-    this.ItemCart.splice(0, this.ItemCart.length);
     this.closeCart();
+    this.onPay.emit();
   }
 }
